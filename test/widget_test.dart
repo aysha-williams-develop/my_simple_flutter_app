@@ -10,4 +10,9 @@ void main() {
     // Look for "Hello World" text
     expect(find.text('Hello World'), findsOneWidget);
   });
+
+  testWidgets('The App bar displays the app name', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+    expect(find.text('My Simple Flutter App'), findsOneWidget);
+  });
 }
