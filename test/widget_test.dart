@@ -13,6 +13,6 @@ void main() {
 
   testWidgets('The App bar displays the app name', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
-    expect(find.text('My Simple Flutter App'), findsOneWidget);
+    expect(find.text('Greetings From Outer Space'), findsOneWidget);
   });
 }
