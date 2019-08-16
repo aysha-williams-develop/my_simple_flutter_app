@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: TextFormField(
             decoration: const InputDecoration(
-              hintText: 'What\'s your name?',
+              labelText: 'What\'s your name?',
+              hintText: 'Your Name'
             )
           )
         ),
