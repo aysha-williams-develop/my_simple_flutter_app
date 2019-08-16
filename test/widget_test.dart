@@ -14,7 +14,7 @@ void main() {
     expect(find.text('Greetings From Outer Space'), findsOneWidget);
   });
 
-  testWidgets('A text box is available', (WidgetTester tester) async {
+  testWidgets('A text field is available with placeholder text', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
     expect(find.widgetWithText(TextFormField, 'Your Name'), findsOneWidget);
   });
