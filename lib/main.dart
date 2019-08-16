@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           title: Text('Greetings From Outer Space'),
         ),
         body: Center(
-          child: Text('Hello World'),
+          child: Text('What\'s your name?'),
         ),
         bottomNavigationBar: BottomAppBar(
           child: Container(height: 50.0,),
