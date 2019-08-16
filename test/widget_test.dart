@@ -16,6 +16,6 @@ void main() {
 
   testWidgets('A text box is available', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
-    expect(find.byType(TextFormField), findsOneWidget);
+    expect(find.widgetWithText(TextFormField, 'Your Name'), findsOneWidget);
   });
 }
