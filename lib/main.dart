@@ -16,7 +16,11 @@ class MyApp extends StatelessWidget {
           title: Text('Greetings From Outer Space'),
         ),
         body: Center(
-          child: Text('What\'s your name?'),
+          child: TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'What\'s your name?',
+            )
+          )
         ),
         bottomNavigationBar: BottomAppBar(
           child: Container(height: 50.0,),
