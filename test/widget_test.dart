@@ -18,4 +18,14 @@ void main() {
     await tester.pumpWidget(MyApp());
     expect(find.widgetWithText(TextFormField, 'Your Name'), findsOneWidget);
   });
+
+  testWidgets('A greeting is displayed', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+    final Finder textfield = find.widgetWithText(TextFormField, 'Your Name');
+
+    await tester.enterText(textfield, 'Aysha');
+    await tester.pump();
+
+    expect(find.text('Hello, Aysha!'), findsOneWidget);
+  });
 }
