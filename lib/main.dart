@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'GreetingForm.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -16,12 +18,7 @@ class MyApp extends StatelessWidget {
           title: Text('Greetings From Outer Space'),
         ),
         body: Center(
-          child: TextFormField(
-            decoration: const InputDecoration(
-              labelText: 'What\'s your name?',
-              hintText: 'Your Name'
-            )
-          )
+          child: GreetingForm()
         ),
         bottomNavigationBar: BottomAppBar(
           child: Container(height: 50.0,),
