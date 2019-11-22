@@ -33,10 +33,16 @@ class _GreetingFormState extends State<GreetingForm> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 10.0),
+            child: Text(
+              'What\'s your name?',
+              style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.5)),
+          ),
           TextFormField(
             decoration: const InputDecoration(
-                labelText: 'What\'s your name?',
-                hintText: 'Your Name'
+                hintText: 'Your Name',
+                border: const OutlineInputBorder()
             ),
             controller: textEditingController,
           ),
