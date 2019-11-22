@@ -18,7 +18,10 @@ class MyApp extends StatelessWidget {
           title: Text('Greetings From Outer Space'),
         ),
         body: Center(
-          child: GreetingForm()
+          child: Padding(
+            padding: EdgeInsets.all(40.0),
+            child: GreetingForm(),
+          )
         ),
         bottomNavigationBar: BottomAppBar(
           child: Container(height: 50.0,),
