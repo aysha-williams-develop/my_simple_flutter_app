@@ -23,9 +23,34 @@ void main() {
     await tester.pumpWidget(MyApp());
     final Finder textfield = find.widgetWithText(TextFormField, 'Your Name');
 
+    await tester.tap(textfield);
     await tester.enterText(textfield, 'Aysha');
     await tester.pump();
 
-    expect(find.text('Hello, Aysha!'), findsOneWidget);
+    final Finder greetingText = find.text('Hello, Aysha!');
+    expect(greetingText, findsOneWidget);
   });
+
+  testWidgets('greeting text is always visible', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+
+    const double PORTRAIT_WIDTH = 400.0;
+    const double PORTRAIT_HEIGHT = 800.0;
+    const double PORTRAIT_HEIGHT_WITH_KEYBOARD = PORTRAIT_HEIGHT/2;
+
+    final TestWidgetsFlutterBinding binding = TestWidgetsFlutterBinding.ensureInitialized();
+
+    await binding.setSurfaceSize(Size(PORTRAIT_WIDTH, PORTRAIT_HEIGHT_WITH_KEYBOARD));
+    await tester.pumpAndSettle();
+
+    final Finder textfield = find.widgetWithText(TextFormField, 'Your Name');
+
+    await tester.tap(textfield);
+    await tester.enterText(textfield, 'Aysha');
+    await tester.pump();
+
+    final Finder greetingText = find.text('Hello, Aysha!');
+    expect(greetingText, findsOneWidget);
+  });
+
 }

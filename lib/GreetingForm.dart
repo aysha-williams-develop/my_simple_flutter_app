@@ -40,13 +40,22 @@ class _GreetingFormState extends State<GreetingForm> {
               style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.5)),
           ),
           TextFormField(
+            key: Key('textField'),
             decoration: const InputDecoration(
                 hintText: 'Your Name',
                 border: const OutlineInputBorder()
             ),
             controller: textEditingController,
           ),
-          Text(_greetingText)
+          Center(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(0, 90.0, 0, 0),
+              child: Text(
+                _greetingText,
+                key: Key('greetingText')
+              )
+            )
+          )
         ]);
   }
 }
